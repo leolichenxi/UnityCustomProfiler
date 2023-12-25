@@ -1,0 +1,22 @@
+---[SystemInfo]
+CHENXI
+Windows 11  (10.0.22621) 64bit | Vulkan 1.1.0 [0x7211c000]
+Des:黄色表示标定值，如果小于标定，柱状图显示绿色，超过则显示红色
+TestTag:Test
+---[Data]
+Memory,total-pss,android total-pss,1,102400,0
+Memory,ReservedMemory,Total Reserved memory by Unity,0,104857600,1954066432
+Memory,AllocatedMemory,Allocated memory by Unity,0,104857600,1143196592
+Memory,UnusedReservedMemory,Reserved but not allocated,0,104857600,810869840
+Memory,MonoHeap,Allocated Mono heap size,0,104857600,3876429824
+Memory,MonoUsed,Mono used size,0,104857600,2843140096
+Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,516679356
+Memory,LuaMemory,LuaMemory,1,102400,85865
+UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,207555286
+UnityObjectMemory,Shader,Unity Shader Size,0,52428800,35335161
+UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,257712
+UnityObjectMemory,Font,Unity Font Size,0,16777216,13077455
+UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,357271500
+UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,105783584
+UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,478224
+GPU,Drawcall,Drawcall,2,300,25
