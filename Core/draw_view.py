@@ -14,10 +14,10 @@ import plotly.offline
 style.use('ggplot')
 
 print(sys.platform)
-# if sys.platform.__contains__("win"):
-#    plt.rcParams['font.sans-serif'] = ['SimHei']
+if sys.platform.__contains__("win"):
+   plt.rcParams['font.sans-serif'] = ['SimHei']
 
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Songti SC', 'STFangsong']
+# plt.rcParams['font.sans-serif'] = ['SimHei', 'Songti SC', 'STFangsong']
 plt.rcParams['axes.unicode_minus'] = False
 
 workSpace = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -48,6 +48,9 @@ class DrawInfo:
         elif self.unitConversion == 1:
             self.show_value = self.value * 1.0 / 1024
             self.show_max_value = self.maxValue * 1.0 / 1024
+        elif self.unitConversion == 3:
+            self.show_value = self.value * 0.001
+            self.show_max_value = self.maxValue * 0.001
         else:
             self.show_value = self.value
             self.show_max_value = self.maxValue
@@ -59,6 +62,9 @@ class DrawInfo:
         if self.unitConversion == 1:
             mb = self.value * 1.0 / 1024
             return "%s" % round(mb, 1)
+        if self.unitConversion == 3:
+            count = self.value * 0.001
+            return "%s" % round(count, 1)
         return self.value
 
     def get_max_value_str(self):
@@ -68,6 +74,11 @@ class DrawInfo:
         if self.unitConversion == 1:
             mb = self.maxValue * 1.0 / 1024
             return "%s" % round(mb, 1)
+        if self.unitConversion == 2:
+            return "%s" % self.maxValue
+        if self.unitConversion == 3:
+            count = self.maxValue * 0.001
+            return "%s" % round(count, 1)
         return "%s" % self.maxValue
 
     def is_out_limit(self):
@@ -114,14 +125,13 @@ def check_line_has_value(line):
 def parse_file_infos(file_path):
     draw_infos = []
     sys_info = []
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding= "utf-8") as file:
         lines = file.readlines()
         length = len(lines)
         for i in range(0, length):
             line = lines[i]
             if line.startswith("---["):
                 title = line.strip().replace("---[", "").replace("]", "")
-                print(title)
                 if title == "Data":
                     while i < (length - 1):
                         i = i + 1
@@ -142,7 +152,6 @@ def parse_file_infos(file_path):
                             i = i - 1
                             break
                         if check_line_has_value(line):
-                            print(line)
                             sys_info.append(line)
     report = Report(sys_info=sys_info, content=draw_infos)
     print(draw_infos)

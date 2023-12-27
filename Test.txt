@@ -1,22 +1,25 @@
 ---[SystemInfo]
 CHENXI
 Windows 11  (10.0.22621) 64bit | Vulkan 1.1.0 [0x7211c000]
-Des:黄色表示标定值，如果小于标定，柱状图显示绿色，超过则显示红色
-TestTag:Test
+Des:Nothing
+TestTag:Test111
 ---[Data]
-Memory,total-pss,android total-pss,1,102400,0
-Memory,ReservedMemory,Total Reserved memory by Unity,0,104857600,1954066432
-Memory,AllocatedMemory,Allocated memory by Unity,0,104857600,1143196592
-Memory,UnusedReservedMemory,Reserved but not allocated,0,104857600,810869840
-Memory,MonoHeap,Allocated Mono heap size,0,104857600,3876429824
-Memory,MonoUsed,Mono used size,0,104857600,2843140096
-Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,516679356
-Memory,LuaMemory,LuaMemory,1,102400,85865
-UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,207555286
-UnityObjectMemory,Shader,Unity Shader Size,0,52428800,35335161
-UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,257712
-UnityObjectMemory,Font,Unity Font Size,0,16777216,13077455
-UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,357271500
+Memory,total-pss,android total-pss,1,10240000,0
+Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,3223498752
+Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,2208096668
+Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,1015402084
+Memory,MonoHeap,Allocated Mono heap size,0,136314880,15279955968
+Memory,MonoUsed,Mono used size,0,125829120,4650074112
+Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,722392006
+Memory,LuaMemory,LuaMemory,1,102400,95382
+UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,253212704
+UnityObjectMemory,Shader,Unity Shader Size,0,52428800,35742020
+UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,24336140
+UnityObjectMemory,Font,Unity Font Size,0,16777216,13121643
+UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,590648182
 UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,105783584
-UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,478224
-GPU,Drawcall,Drawcall,2,300,25
+UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,4829096
+GPU,Drawcall,Drawcall,2,300,475
+GPU,ShaderCount,Shader数量,2,300,413
+GPU,MeshCount,Mesh数量,2,300,392
+GPU,VerticesCount,顶点数量,3,100000,392000
