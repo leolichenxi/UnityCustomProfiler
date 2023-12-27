@@ -58,7 +58,6 @@ class MainWindow:
         self.ddb_default.current(2)
 
 
-
 if __name__ == '__main__':
      window = MainWindow()
      window.start()

@@ -33,6 +33,45 @@ arrowprops = dict(
     angleB = 90, rad = 10")
 
 
+def get_value_str(unit_conversion,value):
+    if unit_conversion == 0:
+        mb = value * 1.0 / 1024 / 1024
+        return "%s" % round(mb, 2)
+    if  unit_conversion == 1:
+        mb = value * 1.0 / 1024
+        return "%s" % round(mb, 2)
+    if unit_conversion == 3:
+        count = value * 0.001
+        return "%s" % round(count, 2)
+    return value
+
+
+def get_max_value_str(unit_conversion,max_value):
+    if unit_conversion == 0:
+        mb = max_value * 1.0 / 1024 / 1024
+        return "%s" % round(mb, 2)
+    if unit_conversion == 1:
+        mb = max_value * 1.0 / 1024
+        return "%s" % round(mb, 2)
+    if unit_conversion == 2:
+        return "%s" % max_value
+    if unit_conversion == 3:
+        count = max_value * 0.001
+        return "%s" % round(count, 2)
+    return "%s" % max_value
+
+
+def get_label_name(unit_conversion,name):
+    if unit_conversion == 0:
+        return "%s(MB)" % name
+    if unit_conversion == 1:
+        return "%s(MB)" % name
+    if unit_conversion == 2:
+        return "%s(Unit)" % name
+    if unit_conversion == 3:
+        return "%s(K)" % name
+
+
 class DrawInfo:
     def __init__(self, line):
         info = line.replace("\n", "").split(",")
@@ -56,49 +95,42 @@ class DrawInfo:
             self.show_max_value = self.maxValue
 
     def get_value_str(self):
-        if self.unitConversion == 0:
-            mb = self.value * 1.0 / 1024 / 1024
-            return "%s" % round(mb, 1)
-        if self.unitConversion == 1:
-            mb = self.value * 1.0 / 1024
-            return "%s" % round(mb, 1)
-        if self.unitConversion == 3:
-            count = self.value * 0.001
-            return "%s" % round(count, 1)
-        return self.value
+        return get_value_str(unit_conversion=self.unitConversion,value=self.value)
 
     def get_max_value_str(self):
-        if self.unitConversion == 0:
-            mb = self.maxValue * 1.0 / 1024 / 1024
-            return "%s" % round(mb, 1)
-        if self.unitConversion == 1:
-            mb = self.maxValue * 1.0 / 1024
-            return "%s" % round(mb, 1)
-        if self.unitConversion == 2:
-            return "%s" % self.maxValue
-        if self.unitConversion == 3:
-            count = self.maxValue * 0.001
-            return "%s" % round(count, 1)
-        return "%s" % self.maxValue
+        return get_max_value_str(unit_conversion=self.unitConversion,max_value=self.maxValue)
+
+    def get_label_name(self):
+        return get_label_name(unit_conversion=self.unitConversion,name=self.name)
 
     def is_out_limit(self):
         return self.value > self.maxValue
 
-    def get_label_name(self):
-        if self.unitConversion == 0:
-            return "%s(MB)" % self.name
-        if self.unitConversion == 1:
-            return "%s(MB)" % self.name
-        if self.unitConversion == 2:
-            return "%s(Unit)" % self.name
-        if self.unitConversion == 3:
-            return "%s(K)" % self.name
 
+class TopInfo:
+    def __init__(self,line):
+        info = line.replace("\n", "").split(",")
+        self.category = info[1]
+        self.des = info[2]
+        self.unitConversion = int(info[3])
+        self.maxValue = int(info[4])
+        self.value = []
+        self.parse_values(info[5])
+
+    def parse_values(self,value):
+        line = value[1:-1]
+        items = line.split("$")
+        for item in items:
+            if len(item) > 0:
+               v = item.split("=")
+               self.value.append((v[0],int(v[1])))
+        print(self.value)
 
 class Report:
-    def __init__(self, sys_info, content):
+    def __init__(self, sys_info, content,top_info):
         self.sys_info = sys_info
         self.content = content
+        self.top_info = top_info
 
     def export_report(self, out_path):
         infos = dict()
@@ -116,6 +148,9 @@ def check_line_invalid(line):
     items = line.replace("\n", "").split(",")
     return len(items) == 6
 
+def check_top_line_invalid(line):
+    return check_line_invalid(line)
+
 
 def check_line_has_value(line):
     return len(line.strip()) > 0
@@ -124,6 +159,7 @@ def check_line_has_value(line):
 def parse_file_infos(file_path):
     draw_infos = []
     sys_info = []
+    top_info = []
     with open(file_path, 'r', encoding= "utf-8") as file:
         lines = file.readlines()
         length = len(lines)
@@ -152,7 +188,20 @@ def parse_file_infos(file_path):
                             break
                         if check_line_has_value(line):
                             sys_info.append(line)
-    report = Report(sys_info=sys_info, content=draw_infos)
+                elif title == "Top":
+                    while i < (length - 1):
+                        i = i + 1
+                        line = lines[i]
+                        if line.startswith("---["):
+                            i = i - 1
+                            break
+                        if check_top_line_invalid(line):
+                            top_info.append(TopInfo(line))
+                        else:
+                            print("Jump empty line")
+
+
+    report = Report(sys_info=sys_info, content=draw_infos,top_info=top_info)
     return report
 
 
@@ -162,7 +211,6 @@ def draw_item_view(ax, category, draw_infos):
     names = []
     values = []
     max_values = []
-    i = 1
     width = 0.2
     x_ticks = []
     max_length = 10
@@ -196,10 +244,10 @@ def draw_item_view(ax, category, draw_infos):
     ax.grid(False)
     for i in range(0, length):
         plt.text(i - 0.1, values[i] + 3, draw_infos[i].get_value_str(), va="bottom", ha='center', fontsize=8)
-        plt.text(i + 0.1, max_values[i] + 3, draw_infos[i].get_max_value_str(), va="bottom", ha='center', fontsize=6,
-                 color="b")
+        plt.text(i + 0.1, max_values[i] + 3, draw_infos[i].get_max_value_str(), va="bottom", ha='center', fontsize=6, color="b")
 
-def dra_sys_info(sys_info_ax,report):
+
+def draw_sys_info(sys_info_ax,report):
     plt.sca(sys_info_ax)
     sys_info_ax.grid(False)
     sys_info_ax.set_facecolor((0.9,0.9,0.9,1))
@@ -212,10 +260,52 @@ def dra_sys_info(sys_info_ax,report):
         h = h - 0.15
 
 
+def draw_top_info(ax,top_info : TopInfo):
+    ax.set_title("Top 10 %s " % top_info.category)
+    ax.grid(False)
+    plt.sca(ax)
+
+    values = []
+    color = []
+    names = []
+    labels = []
+    max_length = 10
+    for i in range(0, max_length):
+        values.append(0)
+        names.append('-')
+        labels.append("Top %s"%{i+1})
+        color.append("r")
+
+    for i in range(0, len(top_info.value)):
+        names[i] = top_info.value[i][0]
+        values[i] = top_info.value[i][1]
+
+    values.reverse()
+    names.reverse()
+    color.reverse()
+    labels.reverse()
+
+    width = 1
+    x_ticks = []
+    for i in range(0, max_length):
+        x_ticks.append(i * width)
+    plt.yticks(np.arange(10), labels=labels)
+    # ax.set_yticks(x_ticks)
+    ax.legend([])
+    plt.sca(ax)
+    plt.barh(np.arange(10), values, height=0.6, color=color)
+    print(names)
+    print(values)
+    print(x_ticks)
+    for i in range(0, len(values)) :
+        if names[i] != "-" :
+           plt.text(values[i] + 1, i,"%s %s" % (names[i],get_value_str(top_info.unitConversion,values[i])), va="bottom", ha='left', fontsize=8)
+
+
 def draw_category_view(report, out_path, show=True):
     infos_dic = report.infos
-    count = len(infos_dic)
-    per = 4
+    count = len(infos_dic) + 1 + len(report.top_info)
+    per = count
     h_space = 1
     height = count * per + count * h_space
     if height < 10:
@@ -223,17 +313,25 @@ def draw_category_view(report, out_path, show=True):
     fig = plt.figure(figsize=(24, height), dpi=100)
     i = 1
     sys_info = fig.add_subplot(per, 1, i)
-    dra_sys_info(sys_info,report)
+    draw_sys_info(sys_info,report)
     i = i + 1
     for key, value in infos_dic.items():
         ax = fig.add_subplot(per, 1, i)
         # ax = fig.add_subplot(per, 1, i,frameon = False,facecolor = (0.9,0.9,0.9,0.7),)
         draw_item_view(ax, key, value)
         i = i + 1
+
+    for top in report.top_info:
+        top_info = fig.add_subplot(per, 1, i)
+        draw_top_info(top_info, top)
+        i = i + 1
+
     fig.subplots_adjust(wspace=1, hspace=h_space)
     plt.savefig(out_path)  #
     if show:
         plt.show()
+
+
 
 
 def draw_file(file_path, out_path):
