@@ -108,7 +108,6 @@ class Report:
                 items = []
                 infos.setdefault(draw_info.category, items)
             items.append(draw_info)
-        print(infos.keys())
         self.infos = infos
         draw_category_view(self, out_path)
 
@@ -154,7 +153,6 @@ def parse_file_infos(file_path):
                         if check_line_has_value(line):
                             sys_info.append(line)
     report = Report(sys_info=sys_info, content=draw_infos)
-    print(draw_infos)
     return report
 
 
