@@ -32,11 +32,31 @@ arrowprops = dict(
     connectionstyle="angle, angleA = 0, \
     angleB = 90, rad = 10")
 
+HSpace = 0.63
 
 def get_value_str(unit_conversion,value):
     if unit_conversion == 0:
         mb = value * 1.0 / 1024 / 1024
         return "%s" % round(mb, 2)
+    if  unit_conversion == 1:
+        mb = value * 1.0 / 1024
+        return "%s" % round(mb, 2)
+    if unit_conversion == 3:
+        count = value * 0.001
+        return "%s" % round(count, 2)
+    return value
+
+OneMB =  1024 * 1024
+OneKB =  1024
+def get_value_show_str(unit_conversion,value):
+    if unit_conversion == 0:
+        if value>= OneMB:
+            mb = value * 1.0 / OneMB
+            return "%s MB" % round(mb, 2)
+        else:
+            mb = value * 1.0 / OneKB
+            return "%s KB" % round(mb, 2)
+
     if  unit_conversion == 1:
         mb = value * 1.0 / 1024
         return "%s" % round(mb, 2)
@@ -200,7 +220,6 @@ def parse_file_infos(file_path):
                         else:
                             print("Jump empty line")
 
-
     report = Report(sys_info=sys_info, content=draw_infos,top_info=top_info)
     return report
 
@@ -243,8 +262,8 @@ def draw_item_view(ax, category, draw_infos):
 
     ax.grid(False)
     for i in range(0, length):
-        plt.text(i - 0.1, values[i] + 3, draw_infos[i].get_value_str(), va="bottom", ha='center', fontsize=8)
-        plt.text(i + 0.1, max_values[i] + 3, draw_infos[i].get_max_value_str(), va="bottom", ha='center', fontsize=6, color="b")
+        plt.text(i - 0.1, values[i] + 1, draw_infos[i].get_value_str(), va="bottom", ha='center', fontsize=8)
+        plt.text(i + 0.1, max_values[i] + 1, draw_infos[i].get_max_value_str(), va="bottom", ha='center', fontsize=6, color="b")
 
 
 def draw_sys_info(sys_info_ax,report):
@@ -253,7 +272,7 @@ def draw_sys_info(sys_info_ax,report):
     sys_info_ax.set_facecolor((0.9,0.9,0.9,1))
     sys_info_ax.xaxis.set_visible(False)
     sys_info_ax.yaxis.set_visible(False)
-    h = 0.75
+    h = HSpace - 0.15
     for i in range(0,len(report.sys_info)):
         info = report.sys_info[i]
         plt.text(0.01, h, info, va="bottom", ha='left', fontsize=12)
@@ -273,7 +292,7 @@ def draw_top_info(ax,top_info : TopInfo):
     for i in range(0, max_length):
         values.append(0)
         names.append('-')
-        labels.append("Top %s"%{i+1})
+        labels.append("Top %s"% (i+1))
         color.append("r")
 
     for i in range(0, len(top_info.value)):
@@ -286,31 +305,27 @@ def draw_top_info(ax,top_info : TopInfo):
     labels.reverse()
 
     width = 1
-    x_ticks = []
+    y_ticks = []
     for i in range(0, max_length):
-        x_ticks.append(i * width)
-    plt.yticks(np.arange(10), labels=labels)
-    # ax.set_yticks(x_ticks)
+        y_ticks.append(i * width)
+    plt.yticks(np.arange(10), labels=labels,fontsize=6)
+    ax.set_yticks(y_ticks)
     ax.legend([])
     plt.sca(ax)
     plt.barh(np.arange(10), values, height=0.6, color=color)
-    print(names)
-    print(values)
-    print(x_ticks)
     for i in range(0, len(values)) :
         if names[i] != "-" :
-           plt.text(values[i] + 1, i,"%s %s" % (names[i],get_value_str(top_info.unitConversion,values[i])), va="bottom", ha='left', fontsize=8)
+           plt.text(values[i], i,"%s(%s)" % (names[i],get_value_show_str(top_info.unitConversion,values[i])), va="center", ha='left', fontsize=7)
 
 
 def draw_category_view(report, out_path, show=True):
     infos_dic = report.infos
     count = len(infos_dic) + 1 + len(report.top_info)
     per = count
-    h_space = 1
-    height = count * per + count * h_space
+    height = count * 2.2
     if height < 10:
         height = 10
-    fig = plt.figure(figsize=(24, height), dpi=100)
+    fig = plt.figure(figsize=(24, height), dpi=128)
     i = 1
     sys_info = fig.add_subplot(per, 1, i)
     draw_sys_info(sys_info,report)
@@ -326,7 +341,7 @@ def draw_category_view(report, out_path, show=True):
         draw_top_info(top_info, top)
         i = i + 1
 
-    fig.subplots_adjust(wspace=1, hspace=h_space)
+    fig.subplots_adjust(wspace=3, hspace=HSpace)
     plt.savefig(out_path)  #
     if show:
         plt.show()

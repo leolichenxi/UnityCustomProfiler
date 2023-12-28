@@ -1,41 +1,40 @@
 ---[SystemInfo]
-CHENXI
-Windows 11  (10.0.22621) 64bit | Vulkan 1.1.0 [0x7211c000]
+HUAWEI Mate 9
+Android OS 9 / API-28 (HUAWEIMHA-TL00/9.1.0.228C01) | Vulkan 1.0.66 [0x03800000]
 
 Des:Nothing
-Tag:Test112
+Tag:内城
 ---[Data]
-Memory,total-pss,android total-pss,1,10240000,0
-Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,3336278016
-Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,2357252490
-Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,979025526
-Memory,MonoHeap,Allocated Mono heap size,0,136314880,21123342336
-Memory,MonoUsed,Mono used size,0,125829120,5490356224
-Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,740572974
-Memory,LuaMemory,LuaMemory,1,102400,82905
-GPU,Drawcall,Drawcall,2,300,23
-GPU,SetPass,SetPass,2,300,14
-GPU,Triangles,Triangles,3,30000,4732
-GPU,VerticesCount,顶点数量,3,100000,11658
-UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,280315052
-UnityObjectMemory,Shader,Unity Shader Size,0,52428800,35782087
-UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,15923920
-UnityObjectMemory,Font,Unity Font Size,0,16777216,13192423
-UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,595508617
-UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,105783584
-UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,3424844
-UnityObjectCount,RenderTexture,Unity RT Count,2,30,71
-UnityObjectCount,Shader,Unity Shader Count,2,100,414
-UnityObjectCount,Mesh,Unity Mesh Count,2,100,183
-UnityObjectCount,Font,Unity Font Count,2,100,16
-UnityObjectCount,Texture2D,Unity Texture2D Count,2,100,1700
-UnityObjectCount,Texture2DArray,Unity Texture2DArray Count,2,100,4
-UnityObjectCount,ParticleSystem,Unity ParticleSystem Count,2,100,186
+Memory,total-pss,android total-pss,1,1024000,846164
+Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,341983232
+Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,235736216
+Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,106247016
+Memory,MonoHeap,Allocated Mono heap size,0,136314880,192364544
+Memory,MonoUsed,Mono used size,0,125829120,170270720
+Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,0
+Memory,LuaMemory,LuaMemory,1,102400,105630
+GPU,Drawcall,Drawcall,2,300,323
+GPU,SetPass,SetPass,2,300,68
+GPU,Triangles,Triangles,3,30000,15674
+GPU,VerticesCount,顶点数量,3,100000,26043
+UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,44922890
+UnityObjectMemory,Shader,Unity Shader Size,0,52428800,0
+UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,3670276
+UnityObjectMemory,Font,Unity Font Size,0,16777216,0
+UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,3155396
+UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,8
+UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,0
+UnityObjectCount,RenderTexture,Unity RT Count,2,30,25
+UnityObjectCount,Shader,Unity Shader Count,2,100,93
+UnityObjectCount,Mesh,Unity Mesh Count,2,100,374
+UnityObjectCount,Font,Unity Font Count,2,100,9
+UnityObjectCount,Texture2D,Unity Texture2D Count,2,100,681
+UnityObjectCount,Texture2DArray,Unity Texture2DArray Count,2,100,1
+UnityObjectCount,ParticleSystem,Unity ParticleSystem Count,2,100,285
 ---[Top]
-Top,RenderTexture,Unity RT Count,0,30,[GUIViewHDRRT=47150208$GUIViewHDRRT=31495548$GUIViewHDRRT=23925924$GameView RT=16588800$GUIViewHDRRT=12535968$TempBuffer 6223 2338x1080=10100160$GUIViewHDRRT=10064928$SceneView RT=8524800$TempBuffer 589 1920x1080=8294400$TempBuffer 6216 1920x1080=8294400$]
-Top,Shader,Unity Shader Count,0,100,[VacuumShaders/Terrain To Mesh/Legacy Shaders/Bumped Specular/4 Textures=487045$VacuumShaders/Terrain To Mesh/Legacy Shaders/Bumped/4 Textures=484887$VacuumShaders/Terrain To Mesh/Standard/Bumped/3 Textures=443779$VacuumShaders/Terrain To Mesh/Standard/Bumped/4 Textures=437351$VacuumShaders/Terrain To Mesh/Standard/Diffuse/6 Textures=437274$VacuumShaders/Terrain To Mesh/Standard/Diffuse/5 Textures=435898$CNC_Demo/World/HybridBaseLitOpaqueMaskAnim=420365$Hidden/Universal/CoreBlit=376110$CNC_Demo/World/BaseLitOpaqueMask=311938$Hidden/Universal Render Pipeline/StencilDeferred=304463$]
-Top,Mesh,Unity Mesh Count,0,100,[M_GDI_INN_BUILD04_L1_LOD1=1654612$M_GDI_INN_CENTER_L1_LOD1_Anim=1259120$P_GDI_INN_131_L1_LOD_1_0=1149072$M_GDI_INN_BUILD02_L1_LOD1=955740$M_GDI_INN_BUILD03_L1_LOD1=896008$M_GDI_INN_BUILD05_L1_LOD1=647064$M_GDI_INN_HOSPITAL_L0_LOD1_Anim=615668$M_GDI_INN_104_L0_LOD1_Anim=581380$M_GDI_INN_BUILD07_L1_LOD1=477308$M_GDI_INN_OFFICER_L0_LOD1_Anim=435128$]
-Top,Font,Unity Font Count,0,100,[Rajdhani-SemiBold=8917300$Inter-Regular=477400$Inter-SemiBoldItalic=453988$Inter-SemiBoldItalic=453988$Inter-SemiBold=448316$Inter-SemiBold=448316$Inter-Italic=370496$Inter-Italic=370496$Inter-Regular=367128$Inter-Small=362376$]
-Top,Texture2D,Unity Texture2D Count,0,100,[GizmoIconAtlas_pix32=22372212$Apple iPad 2020=16357332$Apple iPhone 8 Plus=16326332$img_loading_bg05=16130640$Apple iPhone X=16114744$Google Pixel 3 XL=15963652$Samsung Galaxy S10+=15442112$Google-Pixel-4a=15270452$Xiaomi Redmi Note 8 Pro=15140792$Oneplus6=14477896$]
-Top,Texture2DArray,Unity Texture2DArray Count,0,100,[ColTextures=99543208$SplatArrays=6237480$UnityDefault2DArray=1448$UnityDefault2DArray=1448$]
-Top,ParticleSystem,Unity ParticleSystem Count,0,100,[lizi=30480$lizi=30480$Fire=26524$lizi=25448$lizi=25448$lizi=25448$lizi=25384$lIzI01=25360$lizi_R_blue=24960$lizi_L_blue=24960$]
+Top,RenderTexture,Unity RT Count,0,30,[TerrainColorVT=16588800$TempBuffer 17 2048x2048=8388608$Static Shadow Map=3276800$TempBuffer 16 1280x1280=3276800$_CameraColorAttachment0=2910720$_CameraDepthAttachment0=2910720$_CameraColorAttachment1=2910720$Fog Blur 1=1048576$Fog Blur 2=1048576$TempBuffer 7 568x320=727040$]
+Top,Shader,Unity Shader Count,0,100,[Hidden/Internal-MotionVectors=0$CNC_Demo/Tools/MovementRoute=0$UI/Default Gray=0$CNC_Demo/World/MountainTransparent=0$CNC_Demo/Particle/Basic 02=0$CNC_Demo/Particle/Basic 01=0$TextMeshPro/Mobile/Distance Field=0$Universal Render Pipeline/Particles/Unlit=0$Universal Render Pipeline/Unlit=0$Hidden/EasyPPS/EasyUber=0$]
+Top,Mesh,Unity Mesh Count,0,100,[M_GDI_INN_BUILD04_L1_LOD3=486666$M_GDI_INN_BUILD03_L1_LOD3=145298$SM_NEU_OUT_ROCK_Group_LOD_3_0=116796$M_GDI_INN_BUILD02_L1_LOD3=113524$M_GDI_INN_BUILD05_L1_LOD3=88044$0_8=87238$SM_NOD_OUT_BIGCITYWALL_02 (1)_LOD_2_0=87216$SM_NOD_OUT_BIGCITYWALL_01 (1)_LOD_2_0=80280$M_thepipe_01=73464$0_6=71954$]
+Top,Font,Unity Font Count,0,100,[Arial=0$LiberationSans=0$wryhztnew_subset=0$Rajdhani-SemiBold=0$Rajdhani-SemiBold=0$uishieldsfly=0$SuperWeapon=0$uidamagefly=0$txt_uihealfly=0$]
+Top,Texture2D,Unity Texture2D Count,0,100,[Rajdhani-SemiBold Atlas=1048576$FogOfWar=1048576$FogPanelTexture2D=262144$NoiseTex256=196608$readableFontTexture =180072$Font Texture=65536$Font Texture=65536$Font Texture=65536$Font Texture=65536$Font Texture=65536$]
+Top,Texture2DArray,Unity Texture2DArray Count,0,100,[UnityDefault2DArray=8$]
