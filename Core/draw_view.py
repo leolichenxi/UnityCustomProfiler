@@ -14,7 +14,7 @@ import plotly.offline
 style.use('ggplot')
 
 print(sys.platform)
-if sys.platform.__contains__("win"):
+if sys.platform == ("win32"):
    plt.rcParams['font.sans-serif'] = ['SimHei']
 else:
    plt.rcParams['font.sans-serif'] = ['Songti SC']
@@ -229,6 +229,7 @@ def parse_file_infos(file_path):
 def draw_item_view(ax, category, draw_infos):
     ax.set_title(category)
     length = len(draw_infos)
+
     names = []
     values = []
     max_values = []

@@ -1,40 +1,40 @@
 ---[SystemInfo]
-HUAWEI Mate 9
-Android OS 9 / API-28 (HUAWEIMHA-TL00/9.1.0.228C01) | Vulkan 1.0.66 [0x03800000]
-
+SM-G973N
+Android OS 7.1.2 / API-25 (NMF26X/700220715) | OpenGL ES 3.1
 Des:Nothing
-Tag:内城
+Tag:文本
 ---[Data]
-Memory,total-pss,android total-pss,1,1024000,846164
-Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,341983232
-Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,235736216
-Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,106247016
-Memory,MonoHeap,Allocated Mono heap size,0,136314880,192364544
-Memory,MonoUsed,Mono used size,0,125829120,170270720
-Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,0
-Memory,LuaMemory,LuaMemory,1,102400,105630
-GPU,Drawcall,Drawcall,2,300,323
-GPU,SetPass,SetPass,2,300,68
-GPU,Triangles,Triangles,3,30000,15674
-GPU,VerticesCount,顶点数量,3,100000,26043
-UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,44922890
-UnityObjectMemory,Shader,Unity Shader Size,0,52428800,0
-UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,3670276
-UnityObjectMemory,Font,Unity Font Size,0,16777216,0
-UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,3155396
-UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,8
-UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,0
-UnityObjectCount,RenderTexture,Unity RT Count,2,30,25
-UnityObjectCount,Shader,Unity Shader Count,2,100,93
-UnityObjectCount,Mesh,Unity Mesh Count,2,100,374
-UnityObjectCount,Font,Unity Font Count,2,100,9
-UnityObjectCount,Texture2D,Unity Texture2D Count,2,100,681
+Memory,total-pss,android total-pss,1,1024000,744903
+Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,355549184
+Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,226321467
+Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,129227717
+Memory,MonoHeap,Allocated Mono heap size,0,136314880,134696960
+Memory,MonoUsed,Mono used size,0,125829120,120090624
+Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,34083365
+Memory,LuaMemory,LuaMemory,1,102400,64609
+GPU,Drawcall,Drawcall,2,300,0
+GPU,SetPass,SetPass,2,300,0
+GPU,Triangles,Triangles,3,30000,0
+GPU,VerticesCount,顶点数量,3,100000,0
+UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,50567042
+UnityObjectMemory,Shader,Unity Shader Size,0,52428800,14549302
+UnityObjectMemory,Mesh,Unity Mesh Size,0,31457280,12448
+UnityObjectMemory,Font,Unity Font Size,0,16777216,17850027
+UnityObjectMemory,Texture2D,Unity Texture2D Size,0,78643200,35109667
+UnityObjectMemory,Texture2DArray,Unity Texture2DArray Size,0,41943040,260
+UnityObjectMemory,ParticleSystem,Unity ParticleSystem Size,0,10485760,100744
+UnityObjectCount,RenderTexture,Unity RT Count,2,30,10
+UnityObjectCount,Shader,Unity Shader Count,2,100,58
+UnityObjectCount,Mesh,Unity Mesh Count,2,400,11
+UnityObjectCount,Font,Unity Font Count,2,10,3
+UnityObjectCount,Texture2D,Unity Texture2D Count,2,600,203
 UnityObjectCount,Texture2DArray,Unity Texture2DArray Count,2,100,1
-UnityObjectCount,ParticleSystem,Unity ParticleSystem Count,2,100,285
+UnityObjectCount,ParticleSystem,Unity ParticleSystem Count,2,300,20
+UnityObjectCount,GameObject,Unity GameObject Count,2,3000,3448
 ---[Top]
-Top,RenderTexture,Unity RT Count,0,30,[TerrainColorVT=16588800$TempBuffer 17 2048x2048=8388608$Static Shadow Map=3276800$TempBuffer 16 1280x1280=3276800$_CameraColorAttachment0=2910720$_CameraDepthAttachment0=2910720$_CameraColorAttachment1=2910720$Fog Blur 1=1048576$Fog Blur 2=1048576$TempBuffer 7 568x320=727040$]
-Top,Shader,Unity Shader Count,0,100,[Hidden/Internal-MotionVectors=0$CNC_Demo/Tools/MovementRoute=0$UI/Default Gray=0$CNC_Demo/World/MountainTransparent=0$CNC_Demo/Particle/Basic 02=0$CNC_Demo/Particle/Basic 01=0$TextMeshPro/Mobile/Distance Field=0$Universal Render Pipeline/Particles/Unlit=0$Universal Render Pipeline/Unlit=0$Hidden/EasyPPS/EasyUber=0$]
-Top,Mesh,Unity Mesh Count,0,100,[M_GDI_INN_BUILD04_L1_LOD3=486666$M_GDI_INN_BUILD03_L1_LOD3=145298$SM_NEU_OUT_ROCK_Group_LOD_3_0=116796$M_GDI_INN_BUILD02_L1_LOD3=113524$M_GDI_INN_BUILD05_L1_LOD3=88044$0_8=87238$SM_NOD_OUT_BIGCITYWALL_02 (1)_LOD_2_0=87216$SM_NOD_OUT_BIGCITYWALL_01 (1)_LOD_2_0=80280$M_thepipe_01=73464$0_6=71954$]
-Top,Font,Unity Font Count,0,100,[Arial=0$LiberationSans=0$wryhztnew_subset=0$Rajdhani-SemiBold=0$Rajdhani-SemiBold=0$uishieldsfly=0$SuperWeapon=0$uidamagefly=0$txt_uihealfly=0$]
-Top,Texture2D,Unity Texture2D Count,0,100,[Rajdhani-SemiBold Atlas=1048576$FogOfWar=1048576$FogPanelTexture2D=262144$NoiseTex256=196608$readableFontTexture =180072$Font Texture=65536$Font Texture=65536$Font Texture=65536$Font Texture=65536$Font Texture=65536$]
-Top,Texture2DArray,Unity Texture2DArray Count,0,100,[UnityDefault2DArray=8$]
+Top,RenderTexture,Unity RT Count,0,30,[TempBuffer 4 3840x2160=33177600$TempBuffer 5 1558x720=4487040$_CameraColorAttachment1=3686400$_CameraDepthAttachment0=3686400$_CameraColorAttachment0=3686400$_CameraDepthTextureHalf=921600$_RefractionColor=921600$TempBuffer 6 1x1=2$SnapshotTempDepth=0$SnapshotTempColor=0$]
+Top,Shader,Unity Shader Count,0,100,[CNC_Demo/Particle/Basic 02=3634570$CNC_Demo/UI/UIParticle=2592959$Ecology/UIEffectSystem/UESMovie=2110787$Hidden/EasyPPS/EasyUber=1836647$CNC_Demo/World/BaseLitOpaqueMask=878970$CNC_Demo/Particle/Basic 02=502999$Universal Render Pipeline/Unlit=236776$CNC_Demo/Particle/Basic 01=208685$Hidden/Anti-Aliasing/TAA=182867$CNC_Demo/UI/UIParticle=155897$]
+Top,Mesh,Unity Mesh Count,0,100,[SM_jianbianpian01=3872$Shared UI Mesh=1220$Quad=1184$Fullscreen Quad=852$TextMeshPro UI Mesh=760$TextMeshPro UI Mesh=760$TextMeshPro UI Mesh=760$TextMeshPro UI Mesh=760$TextMeshPro UI Mesh=760$TextMeshPro UI Mesh=760$]
+Top,Font,Unity Font Count,0,100,[Rajdhani-SemiBold=8908008$Rajdhani-SemiBold=8860956$wryhztnew_subset=81063$]
+Top,Texture2D,Unity Texture2D Count,0,100,[Rajdhani-SemiBold Atlas=2097516$sactx-2-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871808$sactx-0-2048x2048-ASTC 6x6-icon_item-3dad8bb2=1871808$sactx-0-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871808$sactx-0-2048x2048-ASTC 6x6-S_UIWorld-e1c26b87=1871808$sactx-1-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871808$sactx-0-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871720$sactx-1-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871720$sactx-2-2048x2048-ASTC 6x6-S_Common-b0b7c073=1871720$newBigWorldBackground=1048960$]
+Top,Texture2DArray,Unity Texture2DArray Count,0,100,[UnityDefault2DArray=260$]
