@@ -16,6 +16,8 @@ style.use('ggplot')
 print(sys.platform)
 if sys.platform.__contains__("win"):
    plt.rcParams['font.sans-serif'] = ['SimHei']
+else:
+   plt.rcParams['font.sans-serif'] = ['Songti SC']
 
 # plt.rcParams['font.sans-serif'] = ['SimHei', 'Songti SC', 'STFangsong']
 plt.rcParams['axes.unicode_minus'] = False
