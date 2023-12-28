@@ -1,4 +1,4 @@
-
+import math
 #coding:utf-8
 
 import os;
@@ -14,7 +14,7 @@ import plotly.offline
 style.use('ggplot')
 
 print(sys.platform)
-if sys.platform == ("win32"):
+if sys.platform == "win32":
    plt.rcParams['font.sans-serif'] = ['SimHei']
 else:
    plt.rcParams['font.sans-serif'] = ['Songti SC']
@@ -306,7 +306,7 @@ def draw_top_info(ax,top_info : TopInfo):
     names.reverse()
     color.reverse()
     labels.reverse()
-
+    plt.xlim(0, values[9] + math.floor(values[9] * 0.2))
     width = 1
     y_ticks = []
     for i in range(0, max_length):
