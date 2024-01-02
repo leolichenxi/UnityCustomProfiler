@@ -3,7 +3,7 @@ HUAWEI Mate 9
 Android OS 9 / API-28 (HUAWEIMHA-TL00/9.1.0.228C01) | Vulkan 1.0.66 [0x03800000]
 
 Des:Nothing
-Tag:内城
+Tag:测试场景
 ---[Data]
 Memory,total-pss,android total-pss,1,1024000,908202
 Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,505380864
@@ -33,9 +33,5 @@ UnityObjectCount,Texture2DArray,Unity Texture2DArray Count,2,100,1
 UnityObjectCount,ParticleSystem,Unity ParticleSystem Count,2,300,280
 UnityObjectCount,GameObject,Unity GameObject Count,2,3000,14327
 ---[Top]
-Top,RenderTexture,Unity RT Count,0,30,[TerrainColorVT=16588800$TempBuffer 17 2048x2048=8388608$Static Shadow Map=3276800$TempBuffer 16 1280x1280=3276800$_CameraColorAttachment0=2910720$_CameraDepthAttachment0=2910720$_CameraColorAttachment1=2910720$Fog Blur 1=1048576$Fog Blur 2=1048576$_RefractionColor=727040$]
-Top,Shader,Unity Shader Count,0,100,[CNC_Demo/World/BaseLitOpaqueMask=3358519$CNC_Demo/Particle/Basic 02=2165381$CNC_Demo/UI/UIParticle=1523425$Ecology/UIEffectSystem/UESMovie=1488791$CNC_Demo/World/BaseFoliage=1453919$Hidden/EasyPPS/EasyUber=1418949$Hidden/EasyPPS/EasyUber=1409507$CNC_Demo/World/BaseLitTransparent=1398416$CNC_Demo/World/BaseLitTransparentVT=1171993$CNC_Demo/World/BaseTerrainMeshVT=1007082$]
-Top,Mesh,Unity Mesh Count,0,100,[GridMeshNew=1556372$M_GDI_INN_BUILD04_L1_LOD3=974848$M_GDI_INN_BUILD03_L1_LOD3=292056$M_GDI_INN_BUILD02_L1_LOD3=228448$M_GDI_INN_BUILD05_L1_LOD3=177484$M_GDI_INN_BUILD07_L1_LOD3=130488$SM_NEU_OUT_ROCK_Group_LOD_3_0=118148$M_GDI_INN_BUILD09_L1_LOD3=105904$3_9=92536$SM_NOD_OUT_BIGCITYWALL_02 (1)_LOD_2_0=88456$]
-Top,Font,Unity Font Count,0,100,[Rajdhani-SemiBold=8831212$Rajdhani-SemiBold=8799532$LiberationSans=352936$wryhztnew_subset=80931$Arial=60356$uishieldsfly=2240$SuperWeapon=2240$uidamagefly=2240$txt_uihealfly=2240$]
-Top,Texture2D,Unity Texture2D Count,0,100,[Rajdhani-SemiBold Atlas=2097664$FogOfWar=2097664$OutBuilding_Small=1893880$sactx-0-2048x2048-ASTC 6x6-icon_head_hero_new-5144f4d4=1893880$sactx-2-2048x2048-ASTC 6x6-S_Common-b0b7c073=1893880$sactx-0-2048x2048-ASTC 6x6-icon_item-3dad8bb2=1893880$sactx-0-2048x2048-ASTC 6x6-S_UIWorld-e1c26b87=1893880$sactx-0-2048x2048-ASTC 6x6-S_Common-b0b7c073=1893880$sactx-1-2048x2048-ASTC 6x6-S_Common-b0b7c073=1893880$Inner2D_INN_101=1893880$]
+Top,Font,Unity Font Count,0,100,[Arial=60356$Arial=60356]
 Top,Texture2DArray,Unity Texture2DArray Count,0,100,[UnityDefault2DArray=4464$]
