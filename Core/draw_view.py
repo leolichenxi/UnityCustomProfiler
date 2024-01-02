@@ -1,9 +1,8 @@
-import math
 #coding:utf-8
 
-import os;
+import os
 import sys
-
+import math
 import matplotlib.font_manager
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as mfm
