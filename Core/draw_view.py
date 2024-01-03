@@ -425,9 +425,11 @@ def draw_category_view(report, out_path, show=True):
         plt.show()
 
 
-def draw_file(file_path, compare_file_path, out_path):
+def draw_file(file_path:str, compare_file_path:str, out_path):
     report = parse_file_infos(file_path)
-    compare_report = parse_file_infos(compare_file_path)
+    compare_report = None
+    if compare_file_path:
+       compare_report = parse_file_infos(compare_file_path)
     # compare_report = None
     # report.export_report(out_path)
     report.export_compare_report(compare_report, out_path)
