@@ -5,17 +5,17 @@ Android OS 9 / API-28 (HUAWEIMHA-TL00/9.1.0.228C01) | Vulkan 1.0.66 [0x03800000]
 Des:Nothing
 Tag:测试场景
 ---[Data]
-Memory,total-pss,android total-pss,1,1024000,908202
+Memory,total-pss,android total-pss,1,1024000,999202
 Memory,ReservedMemory,Total Reserved memory by Unity,0,367001600,505380864
-Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,325588248
+Memory,AllocatedMemory,Allocated memory by Unity,0,367001600,999588248
 Memory,UnusedReservedMemory,Reserved but not allocated,0,209715200,179792616
 Memory,MonoHeap,Allocated Mono heap size,0,136314880,213065728
 Memory,MonoUsed,Mono used size,0,125829120,164290560
 Memory,GraphicsDriver,AllocatedMemoryForGraphicsDriver,0,104857600,167483694
 Memory,LuaMemory,LuaMemory,1,102400,92593
-GPU,Drawcall,Drawcall,2,300,600
+GPU,Drawcall,Drawcall,2,300,323
 GPU,SetPass,SetPass,2,300,67
-GPU,Triangles,Triangles,3,30000,5381
+GPU,Triangles,Triangles,3,30000,15381
 GPU,VerticesCount,顶点数量,3,100000,25268
 UnityObjectMemory,RenderTexture,Unity RT Size,0,73400320,44922890
 UnityObjectMemory,Shader,Unity Shader Size,0,52428800,25480624

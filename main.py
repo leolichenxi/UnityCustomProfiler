@@ -64,7 +64,7 @@ from Core import draw_view
 if __name__ == '__main__':
      # window = MainWindow()
      # window.start()
-     draw_view.draw_file("Test.txt","Test.png")
+     draw_view.draw_file("Test.txt","Test_compare.txt","Test.png")
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
